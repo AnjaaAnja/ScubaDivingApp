@@ -1,0 +1,39 @@
+<div class="content">
+  <span class="title">Make a reservation</span>
+
+  <form *ngIf="!!organization">
+    <div class="mb-3">
+      <label for="disabledTextInput" class="zakucano form-label"
+        >Organization name: {{ organization?.name }}</label
+      >
+    </div>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="zakucano form-label"
+        >Organization address: {{ organization?.address }}</label
+      >
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Available programs:</label>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        (change)="chooseProgram($event)"
+      >
+        <option [value]="item._id" *ngFor="let item of programs">
+          {{ item.name }}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Choose a date</label>
+      <input
+        type="date"
+        [(ngModel)]="newReservation.date"
+        class="form-control"
+        placeholder=""
+        name="reservationDate"
+      />
+    </div>
+    <button (click)="reserve()" class="btn btn-dark">Submit reservation</button>
+  </form>
+</div>
