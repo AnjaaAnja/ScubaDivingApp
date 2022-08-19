@@ -10,7 +10,7 @@ import { ReplaySubject } from 'rxjs';
   providedIn: 'root',
 })
 export class DataService {
-  public apiPath = 'https://scuba1-diving.herokuapp.com';
+  public apiPath = ' https://scuba-diving-newest.herokuapp.com';
   private _currentUser = new ReplaySubject<User>(1);
 
   public currentUser$ = this._currentUser.asObservable();
