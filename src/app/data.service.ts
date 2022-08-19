@@ -18,11 +18,11 @@ export class DataService {
   constructor(private http: HttpClient, private router: Router) {}
 
   getAllOrganizations(): any {
-    return this.http.get<any>(this.apiPath + '/organizationsAll');
+    return this.http.get<any>(this.apiPath + 'organizationsAll');
   }
 
   login(request: any): any {
-    return this.http.post<any>(this.apiPath + '/login', request).pipe(
+    return this.http.post<any>(this.apiPath + 'login', request).pipe(
       map((response: User) => {
         const user = response;
         if (user) {
@@ -33,7 +33,7 @@ export class DataService {
     );
   }
   register(request: any): any {
-    return this.http.post<any>(this.apiPath + '/register', request).pipe(
+    return this.http.post<any>(this.apiPath + 'register', request).pipe(
       map((response: any) => {
         const user = response[0];
         if (user) {
